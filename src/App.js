@@ -1,5 +1,4 @@
 import React from 'react'
-import BookshelfChanger from './BookshelfChanger'
 import CurrentlyReading from './CurrentlyReading'
 import Read from './Read'
 import Search from './Search'
