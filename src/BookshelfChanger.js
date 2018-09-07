@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
 
+/******************************************************************************
+
+Add method onChange="value" =>{
+return shelf name
+move to new shelf /delete from shelves
+
+}
+*****************************************************************************/
+
 class BookshelfChanger extends Component {
   render() {
     return(
