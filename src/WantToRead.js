@@ -7,3 +7,5 @@ class WantToRead extends Component {
     )
   }
 }
+
+export default WantToRead

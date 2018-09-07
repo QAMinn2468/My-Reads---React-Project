@@ -7,3 +7,5 @@ class CurrentlyReading extends Component {
     )
   }
 }
+
+export default CurrentlyReading
