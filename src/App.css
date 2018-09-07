@@ -33,12 +33,12 @@ body,
 }
 
 .bookshelf2 {
-  background-image: linear-gradient(to bottom right, ghostwhite, orange);
+  background-image: linear-gradient(to bottom right, ghostwhite, lightsalmon);
   padding: 0 10px 20px;
 }
 
 .bookshelf3 {
-  background-image: linear-gradient(to bottom right, ghostwhite, lightgreen);                     
+  background-image: linear-gradient(to bottom right, ghostwhite, lightgreen);
   padding: 0 10px 20px;
 }
 
@@ -48,7 +48,9 @@ body,
 }
 
 @media (min-width: 600px) {
-  .bookshelf {
+  .bookshelf,
+  .bookshelf2,
+  .bookshelf3 {
     padding: 0 20px 40px;
   }
 }
@@ -154,7 +156,7 @@ body,
 }
 
 .book-authors {
-  color: #999;
+  color: darkolivegreen;
 }
 
 .book-top {
