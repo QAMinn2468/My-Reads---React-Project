@@ -87,6 +87,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+
+
+## My Comments
+
+The following npm packages were used:
+create-react-app, prop-types, escape-string-regexp, sort-by, react-router-dom, and form-serialize
