@@ -38,7 +38,7 @@ body,
 }
 
 .bookshelf3 {
-  background-image: linear-gradient(to bottom right, ghostwhite, lightgreen);
+  background-image: linear-gradient(to bottom right, ghostwhite, darkseagreen);
   padding: 0 10px 20px;
 }
 
@@ -156,7 +156,12 @@ body,
 }
 
 .book-authors {
-  color: darkolivegreen;
+  color: maroon;
+}
+
+.book-title:hover,
+.book-authors:hover {
+  font-weight: bold;
 }
 
 .book-top {
@@ -195,9 +200,10 @@ body,
   background: #eee;
 }
 
-/* .book-cover:hover {                                   tried to enlarge/ change color on hover
-  background: aqua;
-} */
+.book-cover:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.7), 0 6px 12px rgba(0,0,0,0.7);
+  background: #eee;
+}
 
 .book-cover-title {
   padding: 20px 10px 0;
