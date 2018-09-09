@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import BookshelfChanger from './BookshelfChanger'
+// import BookshelfChanger from './BookshelfChanger'
 import Spine from './Spine'
 
 class CurrentlyReading extends Component {

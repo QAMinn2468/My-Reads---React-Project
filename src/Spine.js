@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
-import * as BooksAPI from './BooksAPI'
+// import * as BooksAPI from './BooksAPI'
 import BookshelfChanger from './BookshelfChanger'
-import Data from './Data.js'
 
 
 
@@ -36,8 +35,11 @@ switch (book.shelf) {
 }
 
 
+
+
 class Spine extends Component {
   render() {
+    console.log('Props', this.props)
     return(
       {this.props.books.map((book) => (
 
