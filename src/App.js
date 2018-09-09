@@ -3,11 +3,13 @@ import CurrentlyReading from './CurrentlyReading'
 import Read from './Read'
 import Search from './Search'
 import WantToRead from './WantToRead'
-// import Books as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 class BooksApp extends React.Component {
   state = {
+    // screen: 'Bookcase',  // Bookcase or Search
+    // books= []
     /**
      * TODO: Instead of using this state variable to keep track of which page
      * we're on, use the URL in the browser's address bar. This will ensure that
@@ -20,6 +22,12 @@ class BooksApp extends React.Component {
      */
     showSearchPage: false
   }
+
+//   componentDidMount() {
+//   BooksAPI.getAll().then((books) => {                         -// TODO: once backend server is attached, unveil
+//     this.setState({ books })
+//   })
+// }
 
   render() {
     return (

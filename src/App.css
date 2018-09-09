@@ -43,7 +43,7 @@ body,
 }
 
 .list-books-content {
-  padding: 0 0 80px;
+  padding: 0 0 20px;
   flex: 1;                                                /*flex -child*/
 }
 
@@ -83,7 +83,8 @@ body,
   font-size: 0;
 }
 
-a:hover {
+.open-search a:hover {
+  background-color: cornflowerblue;
   background-size: 32px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.7), 0 6px 12px rgba(0,0,0,0.7);
 }
@@ -126,6 +127,11 @@ a:hover {
   background-size: 28px;
   font-size: 0;
 }
+
+.close-search:hover {
+  background-color: mistyrose;
+}
+
 
 .search-books-results {
   padding: 80px 10px 20px;
@@ -199,8 +205,10 @@ a:hover {
 }
 
 .book-shelf-changer:hover {
+  background-color: cornflowerblue;
   background-size: 25px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.7), 0 6px 12px rgba(0,0,0,0.7);}
+  box-shadow: 0 6px 12px rgba(0,0,0,0.7), 0 6px 12px rgba(0,0,0,0.7);
+}
 
 /* book cover */
 

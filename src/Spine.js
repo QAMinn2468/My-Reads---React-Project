@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
-import './App.css'
-import Books as BooksAPI from './BooksAPI'
+// import React, { Component } from 'react'
+// import './App.css'
+// import * as BooksAPI from './BooksAPI'
+// import BookshelfChanger from './BookshelfChanger'
+
 
 
 /******************************************************************************
@@ -8,21 +10,27 @@ prop- individual book key
 style is unique.
 title (The Hobbit) & authors (J.R.R. Tolkien) too.
 
-*******************************************************************************/
-class Spine extends Component {
-  render() {
-    return(
-      <li key={book.id}>
-        <div className="book">
-          <div className="book-top">
-            <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: 'url("http://books.google.com/books/content?id=pD6arNyKyi8C&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70Rw0CCwNZh0SsYpQTkMbvz23npqWeUoJvVbi_gXla2m2ie_ReMWPl0xoU8Quy9fk0Zhb3szmwe8cTe4k7DAbfQ45FEzr9T7Lk0XhVpEPBvwUAztOBJ6Y0QPZylo4VbB7K5iRSk&source=gbs_api")' }}></div>
-            <BookshelfChanger />
-          </div>
-          <div className="book-title">{this.props.bookTitle}</div>
-          <div className="book-authors">{this.props.bookAuthors}</div>
-        </div>
-      </li>
+li> //
 
-    )
-  }
-}
+*******************************************************************************/
+// class Spine extends Component {
+//   render() {
+//     return(
+//       {this.props.books.map((book) => (
+//
+//       <li key={book.id}>
+//         <div className="book">
+//           <div className="book-top">
+//             <div className="book-cover" style={{ {book.width}, {book.height}, {book.backgroundImage} }}></div>
+//             <BookshelfChanger />
+//           </div>
+//           <div className="book-title">{book.bookTitle}</div>
+//           <div className="book-authors">{book.bookAuthors}</div>
+//         </div>
+//       </li>
+//      ))}
+//     )
+//   }
+// }
+//
+// export default Spine
