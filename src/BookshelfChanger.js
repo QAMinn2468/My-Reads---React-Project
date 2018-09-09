@@ -35,10 +35,6 @@ Switch:
 // }
 
 
-
-
-
-
 class BookshelfChanger extends Component {
   render() {
     return(
