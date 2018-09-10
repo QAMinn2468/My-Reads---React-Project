@@ -12,9 +12,12 @@ prop- individual book key
 
 switch statement
 *******************************************************************************/
+
 let cr = [];
 let r = [];
 let wr = [];
+
+// divide books array into shelves
 
 switch (book.shelf) {
 
@@ -34,30 +37,29 @@ switch (book.shelf) {
    break;
 }
 
-
+let book = []
 
 
 class Spine extends Component {
   render() {
-    console.log('Props', this.props)
     return(
-      {this.props.books.map((book) => (
+      <div>
+      {this.props.map((book) => (
 
-      <li key={book.id}>
+      <li key={book.title}>
         <div className="book">
           <div className="book-top">
-            <div className="book-cover" style={{ {book.width}, {book.height}, {book.backgroundImage} }}></div>
+            <div className="book-cover" style={ {width: book.width}, {height: book.height}, {backgroundImage: book.backgroundImage} }>
+            </div>
             <BookshelfChanger />
           </div>
           <div className="book-title">{book.title}</div>
           <div className="book-authors">{book.authors}</div>
         </div>
       </li>
-
-
-
     ))
    }
+   </div>
     )
   }
 }

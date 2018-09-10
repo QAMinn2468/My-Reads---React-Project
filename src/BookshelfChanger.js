@@ -27,6 +27,11 @@ Switch:
   (wantToRead) => (bookcase: true, readShelf: false, currentshelf: false, wantShelf: true), break;
 
 *****************************************************************************/
+
+
+// The shelf changes therefor the shelf is STATE not props!!!
+
+
 // removeBookFromBC = (book) => {
 //   this.setState((state) => ({
 //     bookcase: state.books.filter((b) =>
@@ -55,10 +60,10 @@ class BookshelfChanger extends Component {
       <div className="book-shelf-changer">
         <select>
           <option value="move" disabled>Move to...</option>
-          <option value="currentlyReading" onClick={() => props.moveToCurrentlyRead(book)}>Currently Reading</option>
-          <option value="wantToRead" onClick={() => props.moveToWantToRead(book)}>Want to Read</option>
-          <option value="read" onClick={() => props.moveToRead(book)}>Read</option>
-          <option value="none" onClick={() => props.removeFromShelves(book)}>None</option>
+          <option value="currentlyReading" onClick={() => moveToCurrentlyRead(book)}>Currently Reading</option>
+          <option value="wantToRead" onClick={() => moveToWantToRead(book)}>Want to Read</option>
+          <option value="read" onClick={() => moveToRead(book)}>Read</option>
+          <option value="none" onClick={() => removeFromShelves(book)}>None</option>
         </select>
       </div>
     )
