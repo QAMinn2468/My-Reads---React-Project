@@ -18,8 +18,8 @@ class CurrentlyReading extends Component {
                     <div className="book-cover" style={[book.width, book.height, book.backgroundImage]}></div>
                     <BookshelfChanger />
                   </div>
-                  <div className="book-title">{book.bookTitle}</div>
-                  <div className="book-authors">{book.bookAuthors}</div>
+                  <div className="book-title">{book.title}</div>
+                  <div className="book-authors">{book.authors}</div>
                 </div>
               </li>
             ))
