@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import BookshelfChanger from './BookshelfChanger'
-
+// books={[wr]}
 
 class WantToRead extends Component {
   render() {
     return(
       <div className="bookshelf2">
-        <h2 className="bookshelf-title">Want to Read</h2>
+        <h2 className="bookshelf-title">Books I Want to Read</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
             <li>
