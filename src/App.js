@@ -88,7 +88,7 @@ class BooksApp extends React.Component {
                   authors: 'Mark Twain',
                   shelf: 'Read'
                 }
-              ]} />
+              ]}/>
               </div>
             </div>
             <div className="open-search">

@@ -10,7 +10,7 @@ class WantToRead extends Component {
         <h2 className="bookshelf-title">Books I Want to Read</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            {library.map(book => {
+            {library.map(book => (
             <li key={book.title}>
               <div className="book">
                 <div className="book-top">
@@ -21,7 +21,7 @@ class WantToRead extends Component {
                 <div className="book-authors">{book.authors}</div>
               </div>
             </li>
-            })}
+          ))}
           </ol>
         </div>
       </div>
