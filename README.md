@@ -94,3 +94,6 @@ For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 The following npm packages were used:
 create-react-app, prop-types, escape-string-regexp, sort-by, react-router-dom, and form-serialize
+
+websites:
+https://reactjs.org/docs/thinking-in-react.html
