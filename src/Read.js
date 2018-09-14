@@ -18,7 +18,7 @@ class Read extends Component {
             <li key={book.title}>
               <div className="book">
                 <div className="book-top">
-                  <div className="book-cover" style={[book.width, book.height, book.backgroundImage]}></div>
+                  <div className="book-cover" style={{ width: `${book.width}`, height: `${book.height}`, backgroundImage: `${book.backgroundImage}` }}></div>
                   <BookshelfChanger />
                 </div>
                 <div className="book-title">{book.title}</div>
