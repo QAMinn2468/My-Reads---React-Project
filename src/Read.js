@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import BookshelfChanger from './BookshelfChanger'
-// import Spine from './Spine'
+import { Spine } from './Spine.js'
 import './App.css'
 // line 15             <Spine />     return when backend is attached
 // books={[r]}
