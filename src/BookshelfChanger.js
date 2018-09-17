@@ -38,19 +38,21 @@ Switch:
 //       b.id !== book.id)
 //   }))
 // }
-function moveToCurrentlyRead(book) {
+let b;
+let book;
+function moveToCurrentlyRead(b) {
   book.shelf = 'CurrentlyReading';
 }
 
-function moveToRead(book) {
+function moveToRead(b) {
   book.shelf = 'Read';
 }
 
-function moveToWantToRead(book) {
+function moveToWantToRead(b) {
   book.shelf = 'WantToRead';
 }
 
-function removeFromShelves(book) {
+function removeFromShelves(b) {
   book.shelf = '';
 }
 
@@ -60,10 +62,10 @@ class BookshelfChanger extends Component {
       <div className="book-shelf-changer">
         <select>
           <option value="move" disabled>Move to...</option>
-          <option value="currentlyReading" onClick={() => moveToCurrentlyRead(book)}>Currently Reading</option>
-          <option value="wantToRead" onClick={() => moveToWantToRead(book)}>Want to Read</option>
-          <option value="read" onClick={() => moveToRead(book)}>Read</option>
-          <option value="none" onClick={() => removeFromShelves(book)}>None</option>
+          <option value="currentlyReading" onClick={() => moveToCurrentlyRead(b)}>Currently Reading</option>
+          <option value="wantToRead" onClick={() => moveToWantToRead(b)}>Want to Read</option>
+          <option value="read" onClick={() => moveToRead(b)}>Read</option>
+          <option value="none" onClick={() => removeFromShelves(b)}>None</option>
         </select>
       </div>
     )
