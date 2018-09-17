@@ -10,8 +10,10 @@ class Read extends Component {
         <h2 className="bookshelf-title">Books I Have Read</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            {library.map(book => (
-            <li key={book.title}>
+            {library
+              .filter(book => book.shelf === 'read')
+              .map(book => (
+            <li key={book.id}>
               <div className="book">
                 <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${book.backgroundImage})` }}></div>
