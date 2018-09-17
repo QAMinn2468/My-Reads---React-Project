@@ -16,7 +16,7 @@ class WantToRead extends Component {
             <li key={book.id}>
               <div className="book">
                 <div className="book-top">
-                <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${book.backgroundImage})` }}></div>
+                <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                   <BookshelfChanger />
                 </div>
                 <div className="book-title">{book.title}</div>
