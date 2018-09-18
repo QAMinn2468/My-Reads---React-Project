@@ -22,21 +22,16 @@ componentDidMount() {                                                          /
 moving = (book, shelf) => {                                                     //  https://reactjs.org/docs/handling-events.html *Experimental Syntax*
   BooksAPI.update(book, shelf)                                                  // book.shelf is the new shelf
 
-  BooksAPI.getAll()
+BooksAPI.getAll()
     .then((books) => {this.setState({ books: books })})
     .then(this.setState({ showSearchPage: false }))                               // Once book is move to new shelf, return to main page.
 }
-
-// searchForBook = () => {
-//   BooksAPI.search(query)
-// }
-
 
   render() {
     return (
       <div className="app">
         {this.state.showSearchPage ? (
-          <Search moving={this.moving}/>
+          <Search books={this.state.books} moving={this.moving}/>
         ) : (
           <div className="list-books">
             <div className="list-books-title">
