@@ -32,9 +32,7 @@ class BookshelfChanger extends Component {
   render() {
     return(
       <div className="book-shelf-changer">
-        <select onChange={(event) =>                                            // Would like to make the event listener passive (passive = true). To improve scroll preformance
-          this.props.moving(this.props.book, event.target.value
-          )}>
+        <select onChange={(event) => this.props.moving(this.props.book, event.target.value)}>
           <option value="move" disabled>Move to...</option>
           <option value="currentlyReading">Currently Reading</option>
           <option value="wantToRead">Books I Want to Read</option>

@@ -17,7 +17,7 @@ class WantToRead extends Component {
               <div className="book">
                 <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: 190, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
-                  <BookshelfChanger book={this.props.books} moving={this.props.moving}/>
+                  <BookshelfChanger book={book} moving={this.props.moving}/>
                 </div>
                 <div className="book-title">{book.title}</div>
                 <div className="book-authors">{book.authors}</div>
