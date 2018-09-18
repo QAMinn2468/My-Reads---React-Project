@@ -1,6 +1,22 @@
 import React, { Component } from 'react'
 import BookshelfChanger from './BookshelfChanger'
 import * as BooksAPI from './BooksAPI'
+// import RegExp from 'RegExp'
+// import sortBy from 'sortBy'
+
+
+
+
+// let showingQuery
+// if (this.state.query) {
+  // const match = new RegExp(escapeRegExp(this.state.query), 'i')
+  // showingQuery = this.props.resultBooks.filter((resultBook) =>
+  //   match.test(resultBook.title || resultBook.authors || resultBook.subject))
+  // } else {
+    // showingQuery = this.props.resultBooks
+  // }
+
+// showingQuery.sort(sortBy('authors'))
 
 
 
@@ -18,13 +34,16 @@ updateQuery = (query) => {
 }
 
 searchForBook = (query) => {
+  if (query) {
   BooksAPI.search(query).then((resultBooks) => {
     this.setState({ resultBooks: resultBooks })
   })
+} else {
+  this.setState({ resultBooks: []} )
+}
 }
 
 render() {
-  if (this.state.query) {
     return(
       <div className="search-books">
         <div className="search-books-bar">
@@ -62,27 +81,5 @@ render() {
     )
   }
 }
-
-  } else {
-    return(
-      <div className="search-books">
-        <div className="search-books-bar">
-          <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
-          <div className="search-books-input-wrapper">
-            <input
-              type="text"
-              placeholder="Search by title or author"
-              value={this.state.query}
-              onChange={(event) =>
-                this.updateQuery(event.target.value)}
-              />
-          </div>
-        </div>
-          <div className="search-books-results">
-            <p>That search term is not listed.  Please try again. </p>
-          </div>
-        </div>
-      )
-    }
 
 export default Search
