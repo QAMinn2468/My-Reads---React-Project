@@ -5,7 +5,7 @@ import Read from './Read'
 import WantToRead from './WantToRead'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
-import reactDOM from 'react-dom'
+// import reactDOM from 'react-dom'
 
 class BooksApp extends React.Component {
   state = {
@@ -17,6 +17,11 @@ componentDidMount() {
   BooksAPI.getAll().then((books) => {
     this.setState({ books })
   })
+}
+
+moving = (book, shelf) => {                                                     //  https://reactjs.org/docs/handling-events.html *Experimental Syntax*
+  console.log(shelf);
+  BooksAPI.update(book, shelf);
 }
 
 
@@ -32,9 +37,9 @@ componentDidMount() {
             </div>
             <div className="list-books-content">
               <div>
-                <CurrentlyReading books={this.state.books}/>
-                <WantToRead books={this.state.books}/>
-                <Read books={this.state.books}/>
+                <CurrentlyReading books={this.state.books} moving={this.moving}/>
+                <WantToRead books={this.state.books} moving={this.moving}/>
+                <Read books={this.state.books} moving={this.moving}/>
               </div>
             </div>
             <div className="open-search">

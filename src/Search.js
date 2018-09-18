@@ -1,11 +1,5 @@
 import React, { Component } from 'react'
 
-/*******************************************************************************
-
-Method - search for multiple terms - > place books in WantToRead
-
-*******************************************************************************/
-
 class Search extends Component {
   render() {
     return(

@@ -15,22 +15,7 @@ removeBook = (book clicked on) => {
 }
 39) onRemove={this.removeBookFromBC}
 
-OR
-
-currentshelf: bookcase: True && shelf: newValue
-none: removeBook
-
-Switch:
-  (none) => {bookcase: false}, break;
-  (read) => (bookcase: true, readShelf: true, currentshelf: false, wantShelf: false), break;
-  (currentlyReading) => (bookcase: true, readShelf: false, currentshelf: true, wantShelf: false), break;
-  (wantToRead) => (bookcase: true, readShelf: false, currentshelf: false, wantShelf: true), break;
-
 *****************************************************************************/
-
-
-// The shelf changes therefor the shelf is STATE not props!!!
-
 
 // removeBookFromBC = (book) => {
 //   this.setState((state) => ({
@@ -38,34 +23,23 @@ Switch:
 //       b.id !== book.id)
 //   }))
 // }
-let b;
-let book;
-function moveToCurrentlyRead(b) {
-  book.shelf = 'CurrentlyReading';
-}
 
-function moveToRead(b) {
-  book.shelf = 'Read';
-}
 
-function moveToWantToRead(b) {
-  book.shelf = 'WantToRead';
-}
 
-function removeFromShelves(b) {
-  book.shelf = '';
-}
+
 
 class BookshelfChanger extends Component {
   render() {
     return(
       <div className="book-shelf-changer">
-        <select>
+        <select onChange={(event) =>
+          this.props.moving(this.props.book, event.target.value
+          )}>
           <option value="move" disabled>Move to...</option>
-          <option value="currentlyReading" onClick={() => moveToCurrentlyRead(b)}>Currently Reading</option>
-          <option value="wantToRead" onClick={() => moveToWantToRead(b)}>Want to Read</option>
-          <option value="read" onClick={() => moveToRead(b)}>Read</option>
-          <option value="none" onClick={() => removeFromShelves(b)}>None</option>
+          <option value="currentlyReading">Currently Reading</option>
+          <option value="wantToRead">Books I Want to Read</option>
+          <option value="read">Books I Have Read</option>
+          <option value="none">None</option>
         </select>
       </div>
     )
