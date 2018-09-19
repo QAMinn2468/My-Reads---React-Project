@@ -36,7 +36,11 @@ updateQuery = (query) => {
 searchForBook = (query) => {
   if (query) {
   BooksAPI.search(query).then((resultBooks) => {
-    this.setState({ resultBooks: resultBooks })
+    if (resultBooks.error) {
+      this.setState({ resultBooks: [] })
+    } else {
+      this.setState({ resultBooks: resultBooks })
+    }
   })
 } else {
   this.setState({ resultBooks: []} )
@@ -44,6 +48,7 @@ searchForBook = (query) => {
 }
 
 render() {
+  let catchThumbnail = this.state.resultBooks.imageLinks ? this.state.resultBooks.imageLinks.thumbnail : ''
     return(
       <div className="search-books">
         <div className="search-books-bar">
@@ -66,7 +71,7 @@ render() {
               <li key={resultBooks.id}>
                 <div className="book">
                   <div className="book-top">
-                  <div className="book-cover" style={{ width: 128, height: 190, backgroundImage: `url(${resultBooks.imageLinks.thumbnail})` }}></div>
+                  <div className="book-cover" style={{ width: 128, height: 190, backgroundImage: `url(${catchThumbnail})` }}></div>
                     <BookshelfChanger resultBooks={resultBooks} moving={this.props.moving}/>
                   </div>
                   <div className="book-title">{resultBooks.title}</div>
