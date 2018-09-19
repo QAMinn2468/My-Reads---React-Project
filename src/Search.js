@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import BookshelfChanger from './BookshelfChanger'
 import * as BooksAPI from './BooksAPI'
+import { Link } from 'react-router-dom'
+
 // import RegExp from 'RegExp'
 // import sortBy from 'sortBy'
 
@@ -43,16 +45,29 @@ searchForBook = (query) => {
     }
   })
 } else {
-  this.setState({ resultBooks: []} )
+  this.setState({ resultBooks: [] })
 }
 }
 
 render() {
-  let catchThumbnail = this.state.resultBooks.imageLinks ? this.state.resultBooks.imageLinks.thumbnail : ''
+  let catchThumbnail = this.state.resultBooks.imageLinks ?
+                       this.state.resultBooks.imageLinks.thumbnail : ''
+
     return(
+      {this.state.screen === '/search' && (
+        <div>
+
       <div className="search-books">
+
         <div className="search-books-bar">
-          <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
+          <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>
+          <Link
+           to='/'
+           className='close'>
+           Close</Link>
+           <Route exact path="/" component={App} />
+
+           </a>
           <div className="search-books-input-wrapper">
             <input
               type="text"
@@ -82,7 +97,10 @@ render() {
 
           </ol>
         </div>
-      </div>
+        </div>
+        </div>
+
+        )}
     )
   }
 }

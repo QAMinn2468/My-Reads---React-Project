@@ -5,10 +5,11 @@ import Read from './Read'
 import WantToRead from './WantToRead'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
-// import reactDOM from 'react-dom'
+import { Link } from 'react-router-dom'
 
 class BooksApp extends React.Component {
   state = {
+    screen: '/',   // /, /search
     showSearchPage: false,
     books: []
   }
@@ -22,9 +23,9 @@ componentDidMount() {                                                          /
 moving = (book, shelf) => {                                                     //  https://reactjs.org/docs/handling-events.html *Experimental Syntax*
   BooksAPI.update(book, shelf)                                                  // book.shelf is the new shelf
 
-BooksAPI.getAll()
-    .then((books) => {this.setState({ books: books })})
-    .then(this.setState({ showSearchPage: false }))                               // Once book is move to new shelf, return to main page.
+  BooksAPI.getAll()
+      .then((books) => {this.setState({ books: books })})
+      .then(this.setState({ showSearchPage: false }))                               // Once book is move to new shelf, return to main page.
 }
 
   render() {
@@ -33,7 +34,12 @@ BooksAPI.getAll()
         {this.state.showSearchPage ? (
           <Search books={this.state.books} moving={this.moving}/>
         ) : (
+          <div>
+          {this.state.screen === '/' && (
           <div className="list-books">
+
+
+
             <div className="list-books-title">
               <h1>~My Reads ~</h1>
             </div>
@@ -45,9 +51,18 @@ BooksAPI.getAll()
               </div>
             </div>
             <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+              <a onClick={() => this.setState({ showSearchPage: true })}>
+              <Link
+               to='/search'
+               className='add-book'>
+               Add a book</Link>
+               <Route exact path="/search" component={Search} />
+               </a>
             </div>
           </div>
+          )}
+          </div>
+
         )}
       </div>
     )
