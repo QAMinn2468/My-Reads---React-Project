@@ -11,7 +11,6 @@ import { Route } from 'react-router-dom'
 
 class BooksApp extends React.Component {
   state = {
-    screen: '/',   // /, /search
     books: []
   }
 
@@ -32,9 +31,12 @@ moving = (book, shelf) => {                                                     
   render() {
     return (
       <div className="app">
+        <Route exact path="/search" render{() => (
+          <Search books={this.state.books} moving={this.moving}/>
+                  )} />
+
         <Route exact path="/" render{() => (
-          <div>
-          <Search screen={this.state.screen} books={this.state.books} moving={this.moving}/>
+
             <div className="list-books">
               <div className="list-books-title">
                 <h1>~My Reads ~</h1>
@@ -51,9 +53,9 @@ moving = (book, shelf) => {                                                     
                  </Link>
               </div>
             </div>
+          )} />
           </div>
         )}/>
-    </div>
   )}
 }
 

@@ -38,7 +38,6 @@ render() {
 
     return(
         <div>
-        <Route exact path="/" render{() => (
           <div className="search-books">
             <div className="search-books-bar">
               <Link to='/' className='close'>Close</Link>
@@ -70,7 +69,8 @@ render() {
                 </ol>
               </div>
             </div>
-          )} />
+
+
         </div>
 
   )}}
