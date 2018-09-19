@@ -6,11 +6,12 @@ import WantToRead from './WantToRead'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import { Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+
 
 class BooksApp extends React.Component {
   state = {
     screen: '/',   // /, /search
-    showSearchPage: false,
     books: []
   }
 
@@ -31,42 +32,29 @@ moving = (book, shelf) => {                                                     
   render() {
     return (
       <div className="app">
-        {this.state.showSearchPage ? (
-          <Search books={this.state.books} moving={this.moving}/>
-        ) : (
+        <Route exact path="/" render{() => (
           <div>
-          {this.state.screen === '/' && (
-          <div className="list-books">
-
-
-
-            <div className="list-books-title">
-              <h1>~My Reads ~</h1>
-            </div>
-            <div className="list-books-content">
-              <div>
-                <CurrentlyReading books={this.state.books} moving={this.moving}/>
-                <WantToRead books={this.state.books} moving={this.moving}/>
-                <Read books={this.state.books} moving={this.moving}/>
+          <Search screen={this.state.screen} books={this.state.books} moving={this.moving}/>
+            <div className="list-books">
+              <div className="list-books-title">
+                <h1>~My Reads ~</h1>
+              </div>
+              <div className="list-books-content">
+                <div>
+                  <CurrentlyReading books={this.state.books} moving={this.moving}/>
+                  <WantToRead books={this.state.books} moving={this.moving}/>
+                  <Read books={this.state.books} moving={this.moving}/>
+                </div>
+              </div>
+              <div className="open-search">
+                <Link> to='/search' className='add-book'>Add a book
+                 </Link>
               </div>
             </div>
-            <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>
-              <Link
-               to='/search'
-               className='add-book'>
-               Add a book</Link>
-               <Route exact path="/search" component={Search} />
-               </a>
-            </div>
           </div>
-          )}
-          </div>
-
-        )}
-      </div>
-    )
-  }
+        )}/>
+    </div>
+  )}
 }
 
 export default BooksApp

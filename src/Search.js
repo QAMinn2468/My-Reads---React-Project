@@ -2,24 +2,7 @@ import React, { Component } from 'react'
 import BookshelfChanger from './BookshelfChanger'
 import * as BooksAPI from './BooksAPI'
 import { Link } from 'react-router-dom'
-
-// import RegExp from 'RegExp'
-// import sortBy from 'sortBy'
-
-
-
-
-// let showingQuery
-// if (this.state.query) {
-  // const match = new RegExp(escapeRegExp(this.state.query), 'i')
-  // showingQuery = this.props.resultBooks.filter((resultBook) =>
-  //   match.test(resultBook.title || resultBook.authors || resultBook.subject))
-  // } else {
-    // showingQuery = this.props.resultBooks
-  // }
-
-// showingQuery.sort(sortBy('authors'))
-
+import { Route } from 'react-router-dom'
 
 
 class Search extends Component {
@@ -54,55 +37,42 @@ render() {
                        this.state.resultBooks.imageLinks.thumbnail : ''
 
     return(
-      {this.state.screen === '/search' && (
         <div>
-
-      <div className="search-books">
-
-        <div className="search-books-bar">
-          <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>
-          <Link
-           to='/'
-           className='close'>
-           Close</Link>
-           <Route exact path="/" component={App} />
-
-           </a>
-          <div className="search-books-input-wrapper">
-            <input
-              type="text"
-              placeholder="Search by title or author"
-              value={this.state.query}
-              onChange={(event) =>
-                this.updateQuery(event.target.value)}
-              />
-
-          </div>
-        </div>
-        <div className="search-books-results">
-          <ol className="books-grid">
-
-            {this.state.resultBooks.map(book => (
-              <li key={book.id}>
-                <div className="book">
-                  <div className="book-top">
-                  <div className="book-cover" style={{ width: 128, height: 190, backgroundImage: `url(${catchThumbnail})` }}></div>
-                    <BookshelfChanger book={book} moving={this.props.moving}/>
-                  </div>
-                  <div className="book-title">{book.title}</div>
-                  <div className="book-authors">{book.authors}</div>
+        <Route exact path="/" render{() => (
+          <div className="search-books">
+            <div className="search-books-bar">
+              <Link to='/' className='close'>Close</Link>
+                 <Route exact path="/" component={App} />
+                <div className="search-books-input-wrapper">
+                  <input
+                    type="text"
+                    placeholder="Search by title or author"
+                    value={this.state.query}
+                    onChange={(event) =>
+                      this.updateQuery(event.target.value)}
+                    />
                 </div>
-              </li>
-            ))}
+              </div>
+              <div className="search-books-results">
+                <ol className="books-grid">
+                  {this.state.resultBooks.map(book => (
+                    <li key={book.id}>
+                      <div className="book">
+                        <div className="book-top">
+                          <div className="book-cover" style={{ width: 128, height: 190, backgroundImage: `url(${catchThumbnail})` }}></div>
+                            <BookshelfChanger book={book} moving={this.props.moving}/>
+                        </div>
+                        <div className="book-title">{book.title}</div>
+                        <div className="book-authors">{book.authors}</div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          )} />
+        </div>
 
-          </ol>
-        </div>
-        </div>
-        </div>
-
-        )}
-    )
-  }
-}
+  )}}
 
 export default Search
