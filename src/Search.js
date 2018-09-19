@@ -67,15 +67,15 @@ render() {
         <div className="search-books-results">
           <ol className="books-grid">
 
-            {this.state.resultBooks.map(resultBooks => (
-              <li key={resultBooks.id}>
+            {this.state.resultBooks.map(book => (
+              <li key={book.id}>
                 <div className="book">
                   <div className="book-top">
                   <div className="book-cover" style={{ width: 128, height: 190, backgroundImage: `url(${catchThumbnail})` }}></div>
-                    <BookshelfChanger resultBooks={resultBooks} moving={this.props.moving}/>
+                    <BookshelfChanger book={book} moving={this.props.moving}/>
                   </div>
-                  <div className="book-title">{resultBooks.title}</div>
-                  <div className="book-authors">{resultBooks.authors}</div>
+                  <div className="book-title">{book.title}</div>
+                  <div className="book-authors">{book.authors}</div>
                 </div>
               </li>
             ))}

@@ -1,32 +1,4 @@
 import React, { Component } from 'react'
-// import Books as BooksAPI from './BooksAPI'
-
-
-/******************************************************************************
-
-Add method onChange="value" =>{
-return shelf name
-move to new shelf /delete from shelves}
-
-removeBook = (book clicked on) => {
-  this.setState((current state) => ({
-    bookcase/all books on the MY READS PAGE: state.books
-}))
-}
-39) onRemove={this.removeBookFromBC}
-
-*****************************************************************************/
-
-// removeBookFromBC = (book) => {
-//   this.setState((state) => ({
-//     bookcase: state.books.filter((b) =>
-//       b.id !== book.id)
-//   }))
-// }
-
-
-
-
 
 class BookshelfChanger extends Component {
   render() {
