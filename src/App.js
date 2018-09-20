@@ -1,8 +1,6 @@
 import React from 'react'
 import Search from './Search'
-import CurrentlyReading from './CurrentlyReading'
-import Read from './Read'
-import WantToRead from './WantToRead'
+import LibraryShelf from './LibraryShelf'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import { Link } from 'react-router-dom'
@@ -40,13 +38,11 @@ BooksAPI.getAll()
 
           <div className="list-books">
             <div className="list-books-title">
-              <h1>~My Reads ~</h1>
+              <h1>~Kim's Reads ~</h1>
             </div>
             <div className="list-books-content">
               <div>
-                <CurrentlyReading books={this.state.books} moving={this.moving}/>
-                <WantToRead books={this.state.books} moving={this.moving}/>
-                <Read books={this.state.books} moving={this.moving}/>
+                <LibraryShelf books={this.state.books} moving={this.moving}/>
               </div>
             </div>
             <div className="open-search">

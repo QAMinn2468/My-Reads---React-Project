@@ -1,3 +1,9 @@
+## Kim's Reads - organize your library!
+
+This project was my first time building a complete program with React.js!  I really enjoyed it and I hope you do as well.  You may move books from one shelf to another, as well as add and delete books from your library.
+
+
+
 ## TL;DR
 
 To get started right away:
