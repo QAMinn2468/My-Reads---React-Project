@@ -36,25 +36,13 @@ body,
   padding: 0 10px 20px;
 }
 
-.bookshelf2 {
-  background-image: linear-gradient(to bottom right, ghostwhite, lightsalmon);
-  padding: 0 10px 20px;
-}
-
-.bookshelf3 {
-  background-image: linear-gradient(to bottom right, ghostwhite, darkseagreen);
-  padding: 0 10px 20px;
-}
-
 .list-books-content {
   padding: 0 0 20px;
   flex: 1;                                                /*flex -child*/
 }
 
 @media (min-width: 600px) {
-  .bookshelf,
-  .bookshelf2,
-  .bookshelf3 {
+  .bookshelf {
     padding: 0 20px 40px;
   }
 }

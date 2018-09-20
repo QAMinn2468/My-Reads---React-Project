@@ -54,8 +54,11 @@ render() {
               </div>
               <div className="search-books-results">
                 <ol className="books-grid">
-                  {this.state.resultBooks.map(book => (
-                    <Book book={book} moving={this.props.moving} />
+                  {
+                    this.state.resultBooks.map(resultBook => (
+                      <li key={resultBook.id}>
+                      <Book book={resultBook} moving={this.props.moving} />
+                      </li>
                   ))}
                 </ol>
               </div>
