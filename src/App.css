@@ -15,6 +15,10 @@ body,
 
 /* main page */
 
+.search-hide {
+  visibility: hidden;
+}
+
 .list-books-title {
   padding: 10px 0;
   background-image: linear-gradient(to bottom right, navy, mediumvioletred);
