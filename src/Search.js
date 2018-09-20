@@ -27,7 +27,7 @@ searchForBook = (query) => {
     }
   })
 } else {
-  this.setState({ resultBooks: []} )
+  this.setState({ resultBooks: [] })
 }
 }
 
@@ -51,25 +51,41 @@ render() {
                 this.updateQuery(event.target.value)}
               />
 
-          </div>
-        </div>
-        <div className="search-books-results">
-          <ol className="books-grid">
-
-            {this.state.resultBooks.map(book => (
-              <li key={book.id}>
-                <div className="book">
-                  <div className="book-top">
-                  <div className="book-cover" style={{ width: 128, height: 190, backgroundImage: `url(${catchThumbnail})` }}></div>
-                    <BookshelfChanger book={book} moving={this.props.moving}/>
-                  </div>
-                  <div className="book-title">{book.title}</div>
-                  <div className="book-authors">{book.authors}</div>
+    return(
+        <div>
+          <div className="search-books">
+            <div className="search-books-bar">
+              <Link to='/' className='close'>Close</Link>
+                 <Route exact path="/" component={App} />
+                <div className="search-books-input-wrapper">
+                  <input
+                    type="text"
+                    placeholder="Search by title or author"
+                    value={this.state.query}
+                    onChange={(event) =>
+                      this.updateQuery(event.target.value)}
+                    />
                 </div>
-              </li>
-            ))}
+              </div>
+              <div className="search-books-results">
+                <ol className="books-grid">
+                  {this.state.resultBooks.map(book => (
+                    <li key={book.id}>
+                      <div className="book">
+                        <div className="book-top">
+                          <div className="book-cover" style={{ width: 128, height: 190, backgroundImage: `url(${catchThumbnail})` }}></div>
+                            <BookshelfChanger book={book} moving={this.props.moving}/>
+                        </div>
+                        <div className="book-title">{book.title}</div>
+                        <div className="book-authors">{book.authors}</div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
 
-          </ol>
+
         </div>
       </div>
      )} />
