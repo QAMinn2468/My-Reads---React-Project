@@ -20,8 +20,7 @@ componentDidMount() {                                                          /
 
 moving = (book, shelf) => {                                                     //  https://reactjs.org/docs/handling-events.html *Experimental Syntax*
   BooksAPI.update(book, shelf)                                                  // book.shelf is the new shelf
-
-BooksAPI.getAll()
+  BooksAPI.getAll()
     .then((books) => {this.setState({ books: books })})
 }
 
