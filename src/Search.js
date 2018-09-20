@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import BookshelfChanger from './BookshelfChanger'
 import * as BooksAPI from './BooksAPI'
+import { Link } from 'react-router-dom'
+
 // import RegExp from 'RegExp'
 // import sortBy from 'sortBy'
 
@@ -22,6 +24,7 @@ import * as BooksAPI from './BooksAPI'
 
 class Search extends Component {
   state = {
+    screen: 'create',                                                                 // '' or 'create'
     query: '',
     resultBooks: []
   }
@@ -50,9 +53,13 @@ searchForBook = (query) => {
 render() {
   let catchThumbnail = this.state.resultBooks.imageLinks ? this.state.resultBooks.imageLinks.thumbnail : ''
     return(
+      <div>
+      {this.state.screen === 'Search' && (
+
       <div className="search-books">
         <div className="search-books-bar">
-          <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
+          <Link className="close-search"
+          >Close</Link>
           <div className="search-books-input-wrapper">
             <input
               type="text"
@@ -83,6 +90,8 @@ render() {
           </ol>
         </div>
       </div>
+    )}
+    </div>
     )
   }
 }

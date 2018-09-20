@@ -9,6 +9,7 @@ import './App.css'
 
 class BooksApp extends React.Component {
   state = {
+    screen: '',                                                                 // '' or 'create'
     showSearchPage: false,
     books: []
   }
@@ -29,10 +30,15 @@ BooksAPI.getAll()
 
   render() {
     return (
+      <div>
+      {this.state.screen === '' && (
+
       <div className="app">
-        {this.state.showSearchPage ? (
-          <Search books={this.state.books} moving={this.moving}/>
-        ) : (
+          <Search books={this.state.books}
+                  moving={this.moving}
+                  onNavigate={() => {
+              this.setState({ screen: 'search' })
+            }}/>
           <div className="list-books">
             <div className="list-books-title">
               <h1>~My Reads ~</h1>
@@ -48,9 +54,10 @@ BooksAPI.getAll()
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
             </div>
           </div>
-        )}
       </div>
-    )
+    )}
+    </div>
+  )
   }
 }
 
