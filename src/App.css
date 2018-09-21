@@ -228,3 +228,43 @@ body,
 input::placeholder {
   color: darkgoldenrod;
 }
+
+
+/*******************************************************************************
+   Description
+*******************************************************************************/
+.dButton {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #555;
+  background-image: url('./icons/arrow-drop-down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.dButton:hover {
+  background-color: cornflowerblue;
+  background-size: 25px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.7), 0 6px 12px rgba(0,0,0,0.7);
+}
+
+.description {
+  visibility: hidden;
+  width: 500px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 2;
+  bottom: 90%;
+  left: 50%;
+  margin-left: -80px;
+}
