@@ -16,7 +16,11 @@ class Book extends Component {
 
           <div className="book-top">
           <div className="book-cover" style={{ width: 128, height: 190, backgroundImage: `url("${catchThumbnail}")` }}></div>
-            <BookshelfChanger book={this.props.book} moving={this.props.moving}/>
+            <BookshelfChanger
+              book={this.props.book}
+              moving={this.props.moving}
+              currentShelf={this.props.currentShelf}
+              />
           </div>
           <div className="book-title">{this.props.book.title}</div>
           <div className="book-authors">{this.props.book.authors}</div>
