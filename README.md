@@ -1,6 +1,6 @@
 ## Kim's Reads - organize your library!
 
-This project was my first time building a complete program with React.js!  I really enjoyed it and I hope you do as well.  You may move books from one shelf to another, as well as add and delete books from your library.
+This project was my first time building a complete program with React.js!  I really enjoyed it and I hope you do as well.  You may move books from one shelf to another, as well as add and delete books from your library.  It is project 6 of 7 toward the Udacity Front-End Nanodegree.
 
 ## TL;DR
 
